@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import { MaterialIcons } from '@expo/vector-icons';
 
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
 
     let [loaded ] =  useFonts({
         'Pattaya-Regular':require('../../assets/fonts/Pattaya-Regular.ttf'),
@@ -17,25 +17,30 @@ export default function LoginScreen() {
 
     },[loaded])
     return (
-        <View>
+        <View style={{flex:1}}>
             {loaded?
             (
-            <><View style={styles.logoContainer}>
+            <>
+            <View style={styles.logoContainer}>
+                {/* Logo */}
                 <Text style={styles.logo}>Market</Text>
             </View>
             <View style={styles.forms}>
                 <View style={styles.input}>
+                    {/* username textinput */}
                     <TextInput
                      placeholder="Username" 
                      style={styles.textfield}
                      />
                 </View>
                  <View style={styles.input}>
+                     {/* password textinput */}
                     <TextInput
                      placeholder="Password"
                      style={styles.textfield}
                      secureTextEntry={show}
                     />
+                    {/* Show password icon */}
                    <TouchableOpacity 
                     onPress={()=>setShow(!show)}
                    >
@@ -43,6 +48,7 @@ export default function LoginScreen() {
                     </TouchableOpacity>
                 </View>
                 <View>
+                    {/* Forgot password */}
                 <TouchableOpacity>
                     <Text style={styles.fp}>
                         Forgot password?
@@ -50,7 +56,10 @@ export default function LoginScreen() {
                 </TouchableOpacity>
                 </View>
                 <View style={styles.buttonWrapper}>
-                    <TouchableOpacity style={styles.button}>
+                    {/* Login button */}
+                    <TouchableOpacity style={styles.button}
+                        onPress={()=>navigation.navigate('Home')}
+                    >
                         <Text style={styles.buttonText}>
                             Login
                         </Text>
@@ -58,6 +67,7 @@ export default function LoginScreen() {
                 </View>
             </View>
             <View style={styles.footer}>
+                {/* facebook image */}
                 <TouchableOpacity style={styles.container}>
                     <View style ={styles.imageContainer}>
                         <Image source ={require('../../assets/images/fb.jpg')} style={styles.fb} />
@@ -67,6 +77,7 @@ export default function LoginScreen() {
                     </View>
                 </TouchableOpacity>
                 <View style={styles.signup}>
+                    {/* Don't have an account */}
                     <View>
                        <Text style={styles.text1}> Don't have an account? </Text>
                     </View>
