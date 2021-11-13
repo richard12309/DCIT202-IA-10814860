@@ -11,7 +11,7 @@ export default function LoginScreen({navigation}) {
         'Montserrat':require('../../assets/fonts/Montserrat-Regular.ttf'),
     })
 
-    const [show,setShow] = useState(true)
+    const [show,setShow] = useState(false)
 
     useEffect(()=>{
 
