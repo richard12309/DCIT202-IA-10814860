@@ -13,7 +13,7 @@ import { Icon, withBadge } from 'react-native-elements'
 const Tab = createBottomTabNavigator()
 
 const TabNav = () => {
-    const items_in_cart =3
+    const items_in_cart = 0
     const BadgedIcon = withBadge(items_in_cart)(Icon)
 
     return (
