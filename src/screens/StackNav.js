@@ -3,6 +3,9 @@ import { StyleSheet, Text, View } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import LoginScreen from './LoginScreen'
 import TabNav from './TabNav'
+import Item from './Item'
+import Profile from './Profile'
+import RegisterScreen from './RegisterScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -17,6 +20,13 @@ const StackNav = () => {
                 headerShown:false
             }}
            />
+             <Stack.Screen 
+            name="Register"
+            component={RegisterScreen}
+            options={{
+                headerShown:false
+            }}
+           />
            <Stack.Screen 
             name="Home"
             options={{
@@ -24,6 +34,14 @@ const StackNav = () => {
             }}
             component={TabNav}
            />
+            <Stack.Screen 
+            name="Item"
+            component={Item}
+           />
+            <Stack.Screen 
+           name="Profile"
+           component={Profile}
+          />
 
        </Stack.Navigator>
     )
